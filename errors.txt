@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 2033: expected 'simple_expression' not found.
+    show Calm Isra at left, darken, with with dissolve
+                                         ^
+
+Ren'Py Version: Ren'Py 8.3.6.25022803
+Fri Mar 14 12:35:43 2025
