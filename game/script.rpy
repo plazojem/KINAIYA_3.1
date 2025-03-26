@@ -351,31 +351,31 @@ label scene_3:
     scene bg road 
     with dissolve
 
-    show mila_standing at right, lighten with dissolve
+    show mila_standing at left, lighten with dissolve
     voice "mila/mila_9.mp3"
     m "Ang ganda pala ng mundo ng mga aso! Napakaraming bagay dito—mga puno, bahay, at mga ibang aso!"
 
-    show mila_standing at right, darken with dissolve
-    show sitting_shadow at left, lighten with dissolve
+    show mila_standing at left, darken with dissolve
+    show sitting_shadow at right, lighten with dissolve
     voice "shadow/line7.mp3"
     s "Tama ka, Mila! Napansin mo ba ang mga sinabi mo? 'Puno,' 'bahay,' at 'aso'—ang mga ito ay pangngalan!"
 
-    show sitting_shadow at left, darken with dissolve
+    show sitting_shadow at right, darken with dissolve
     show chabs_sitting at center, lighten with dissolve
     voice "chabs/line5.mp3"
     c "Ang pangngalan ay mga salitang ginagamit upang pangalanan ang tao, hayop, lugar, bagay, o pangyayari!"
 
     show chabs_sitting at center, darken with dissolve
-    show sitting_shadow at left, lighten with dissolve
+    show sitting_shadow at right, lighten with dissolve
     voice "shadow/line8.mp3"
     s "Halimbawa, ang 'bato' ay isang bagay. Ang 'ilog' ay isang lugar. At tayo—mga 'aso'—ay mga hayop"
 
-    show sitting_shadow at left, darken with dissolve
-    show mila_standing at right, lighten with dissolve
+    show sitting_shadow at right, darken with dissolve
+    show mila_standing at left, lighten with dissolve
     voice "mila/mila_10.mp3"
     m "Ah! Ibig sabihin, ang pangalan ko, 'Mila', ay isang pangngalan din?"
 
-    show mila_standing at right, darken with dissolve
+    show mila_standing at left, darken with dissolve
     show chabs_sitting at center, lighten with dissolve
     voice "chabs/line6.mp3"
     c "Tama! Ang pangalan ng isang tao, hayop, o lugar ay pangngalang pantangi!"
@@ -401,7 +401,6 @@ label prompt_1:
             jump prompt_1
 
         "Mila, Shadow, Chabs":
-            
             voice "chabsprompt/r1.mp3"
             c "Tama! Ang mga pangalang 'Mila,' 'Shadow,' at 'Chabs' ay pangngalan dahil ito ay pangalan ng mga tao o hayop!"
             jump scene_4
@@ -463,7 +462,7 @@ label scene_4:
     m "Halimbawa, kapag kinakausap ko ang nanay ko, hindi ko lang sinasabi 'Salamat,' sinasabi ko rin, 'Salamat po!'"
 
     show mila_standing at left, darken with dissolve
-    voice "tandang aso/line2.mp3"
+    voice "tandang aso/line1.mp3"
     t "Ano itong naririnig ko tungkol sa 'po' at 'opo'?"
 
     show mila_standing at left, lighten with dissolve
@@ -471,7 +470,7 @@ label scene_4:
     m "Magandang araw po! Ipinapaliwanag ko lang po kung paano ito ginagamit bilang tanda ng paggalang."
 
     show mila_standing at left, darken with dissolve
-    voice "tandang aso/line1.mp3"
+    voice "tandang aso/line2.mp3"
     t "Hmm... Mukhang maganda 'yang kaugalian niyo. Sana matutunan din ng ibang aso rito."
 
     show mila_standing at left, darken with dissolve
@@ -616,18 +615,18 @@ label prompt_3:
     menu:
         c "Alin ang pangngalan sa pangungusap na ito?\n'Si Mila ay tumulong sa pusa.'"
         "Sa":
-            voice "mila/mila_prompt3_wrong2.mp3"
-            m "Ang 'sa' ay isang pang-ukol. Subukan mong pumili ulit!"
+            voice "chabsprompt/3...mp3"
+            c "Ang 'sa' ay isang pang-ukol. Subukan mong pumili ulit!"
             jump prompt_3
 
         "Tumulong":
-            voice "mila/mila_prompt3_wrong.mp3"
-            m "Ang 'tumulong' ay isang pandiwa. Ano kaya ang tamang sagot?"
+            voice "chabsprompt/3..mp3"
+            c "Ang 'tumulong' ay isang pandiwa. Ano kaya ang tamang sagot?"
             jump prompt_3
 
         "Mila, pusa":
-            voice "mila/mila_prompt3_right.mp3"
-            m "Tama! Ang 'Mila' at 'pusa' ay pangngalan dahil ito ay pangalan ng isang tao at hayop!"
+            voice "chabsprompt/3....mp3"
+            c "Tama! Ang 'Mila' at 'pusa' ay pangngalan dahil ito ay pangalan ng isang tao at hayop!"
             jump scene_6
         
 
@@ -649,146 +648,166 @@ label scene_6:
     n "Anak, gising ka na! Akala ko ay nawawala ka na!"
 
     show mother_mila at right, darken with dissolve
+    hide scared_mila with dissolve
     show curious_mila at left, lighten with dissolve 
     voice "mila/mila_26.mp3"
     m "Panaginip lang ba ang lahat?"
 
+    hide mother_mila with moveoutright
     voice "mila/mila_27.mp3"
     m "Shadow! Chabs! Nandito lang ba kayo?"
 
-    show happy_mila at left with dissolve 
+    show chabs_sitting at right, lighten with dissolve
+    show sitting_shadow at center, lighten with dissolve
+    show happy_mila at left, lighten with dissolve 
     voice "mila/mila_28.mp3"
     m "Buti naman! Akala ko nawala na kayo!"
 
-    show curious_mila at left, with dissolve 
+    show curious_mila at left, with dissolve
+    hide happy_mila with dissolve
     voice "mila/mila_29.mp3"
     m "Siguro... panaginip lang talaga. Pero natutunan ko ang halaga ng pangngalan—kung paanong hindi lang ito tungkol sa pangalan ng tao o hayop, kundi sa pagbibigay ng kahulugan sa mundo sa paligid natin."
     
     show happy_mila at left, with dissolve
+    hide curious_mila with dissolve
     voice "mila/mila_30.mp3"
     m "Okay, okay! Tara na, maglaro tayo!"
+
+    hide chabs_sitting with dissolve
+    hide happy_mila with dissolve
 
     jump prompt_4
 
 label prompt_4:
 
+    show sitting_shadow at center, with move
     voice "prompt evens/shadow_prompt4.mp3"
     s "Ano ang ibig sabihin ng pangngalan?"
 
     menu:
         s "Ano ang ibig sabihin ng pangngalan?"
         "Pangalan ng tao, hayop, lugar, bagay, o pangyayari":
-            voice "mila/mila_prompt4_right.mp3"
-            m "Tama! Ang pangngalan ay pangalan ng tao, hayop, lugar, bagay, o pangyayari!"
+            voice "prompt evens/shadow_right4B.mp3"
+            s "Tama! Ang pangngalan ay pangalan ng tao, hayop, lugar, bagay, o pangyayari!"
             jump prompt_5
 
         "Salitang nagsasaad ng kilos":
-            voice "mila/mila_prompt4_wrong.mp3"
-            m "Hmm, hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan ulit!"
+            voice "prompt evens/shadow_wrong4A.mp3"
+            s "Hmm, hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan ulit!"
             jump prompt_4
 
         "Salitang naglalarawan ng kilos":
-            voice "mila/mila_prompt4_wrong2.mp3"
-            m "Hindi rin! Ang salitang naglalarawan ng kilos ay hindi ito. Ano kaya ang tamang sagot?"
+            voice "prompt evens/shadow_wrong4C.mp3"
+            s "Hindi rin! Ang salitang naglalarawan ng kilos ay hindi ito. Ano kaya ang tamang sagot?"
             jump prompt_4
 
 
 label prompt_5:
+    hide sitting_shadow with dissolve
 
+    show chabs_sitting at center, with dissolve
     voice "chabsprompt/q5.mp3"
     c "Dahil kilala mo na sina Mila, Shadow, at Chabs, ano naman ang kahulugan ng salitang 'Mila' na ginamit natin sa kwento?"
 
     menu:
         c "Dahil kilala mo na sina Mila, Shadow, at Chabs, ano naman ang kahulugan ng salitang 'Mila' na ginamit natin sa kwento?"
         "Pangalan ng hayop":
-            voice "mila/mila_prompt5_wrong.mp3"
-            m "Hindi! Ang 'Mila' ay hindi pangalan ng hayop."
+            voice "chabsprompt/5..mp3"
+            c "Hindi! Ang 'Mila' ay hindi pangalan ng hayop."
             jump prompt_5
 
         "Pang-uri ng pag-uugali":
-            voice "mila/mila_prompt5_wrong2.mp3"
-            m "Hindi rin! Ang 'Mila' ay hindi paglalarawan. Subukan ulit!"
+            voice "chabsprompt/5...mp3"
+            c "Hindi rin! Ang 'Mila' ay hindi paglalarawan. Subukan ulit!"
             jump prompt_5
 
         "Pangalan ng tao":
-            voice "mila/mila_prompt5_right.mp3"
-            m "Tama! Ang 'Mila' ay isang pangngalan na pangalan ng tao!"
+            voice "chabsprompt/5....mp3"
+            c "Tama! Ang 'Mila' ay isang pangngalan na pangalan ng tao!"
             jump prompt_6
         
     
 
 label prompt_6:
+    hide chabs_sitting with dissolve
 
+    show standing_shadow at center, with dissolve
     voice "prompt evens/shadow_prompt6.mp3"
     s "Kung tinawag mo ang isang aso sa pangalang 'Shadow' o 'Chabs', ano ito?"
 
     menu:
         s "Kung tinawag mo ang isang aso sa pangalang 'Shadow' o 'Chabs', ano ito?"
         "Pangalan ng hayop":
-            voice "mila/mila_prompt6_right.mp3"
-            m "Tama! Ang 'Shadow' at 'Chabs' ay pangngalan dahil ito ay pangalan ng hayop!"
+            voice "prompt evens/shadow_right6A.mp3"
+            s "Tama! Ang 'Shadow' at 'Chabs' ay pangngalan dahil ito ay pangalan ng hayop!"
             jump prompt_7
 
         "Salitang nagsasaad ng kilos":
-            voice "mila/mila_prompt6_wrong.mp3"
-            m "Hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan mong muli!"
+            voice "prompt evens/shadow_wrong6B.mp3"
+            s "Hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan mong muli!"
             jump prompt_6
 
         "Pang-uri":
-            voice "mila/mila_prompt6_wrong2.mp3"
-            m "Mali! Ang pang-uri ay naglalarawan, hindi pangalan."
+            voice "prompt evens/shadow_wrong6C.mp3"
+            s "Mali! Ang pang-uri ay naglalarawan, hindi pangalan."
             jump prompt_6
         
     
 
 label prompt_7:
+    hide standing_shadow with dissolve
 
+    show chabs_standing at center, with dissolve
     voice "chabsprompt/q7.mp3"
     c "Alin sa mga sumusunod ang halimbawa ng pangngalan? Pumili ng tamang sagot: bato, ilog, o masayahin?"
 
     menu:
         c "Alin sa mga sumusunod ang halimbawa ng pangngalan? Pumili ng tamang sagot: bato, ilog, o masayahin?"
         "bato":
-            voice "mila/mila_prompt7_wrong2.mp3"
-            m "Tama! Ang bato at ilog ay mga pangngalan dahil sila ay pangalan ng bagay at lugar!"
+            voice "chabsprompt/q7...mp3"
+            c "Tama! Ang bato at ilog ay mga pangngalan dahil sila ay pangalan ng bagay at lugar!"
             jump prompt_8
 
         "ilog":
-            voice "mila/mila_prompt7_right.mp3"
-            m "Tama! Ang bato at ilog ay mga pangngalan dahil sila ay pangalan ng bagay at lugar!"
+            voice "chabsprompt/7...mp3"
+            c "Tama! Ang bato at ilog ay mga pangngalan dahil sila ay pangalan ng bagay at lugar!"
             jump prompt_8
 
         "masayahin":
-            voice "mila/mila_prompt7_wrong.mp3"
-            m "Hindi! Ang 'masayahin' ay isang pang-uri. Subukan ulit!\n(Maaaring pumili din ng maling sagot kung piliin ang hindi parehong tamang halimbawa.) "
+            voice "chabsprompt/7..mp3"
+            c "Hindi! Ang 'masayahin' ay isang pang-uri. Subukan ulit!\n(Maaaring pumili din ng maling sagot kung piliin ang hindi parehong tamang halimbawa.) "
             jump prompt_7
         
     
 
 label prompt_8:
+    hide chabs_standing with dissolve
 
+    show sitting_shadow at center, with dissolve
     voice "prompt evens/shadow_prompt8.mp3"
     s "Sa huli, ano naman ang ibig sabihin ng pangngalang pantangi?"
 
     menu:
         s "Sa huli, ano naman ang ibig sabihin ng pangngalang pantangi?"
         "Pangalan na ginagamit sa lahat ng bagay":
-            voice "mila/mila_prompt8_wrong.mp3"
-            m "Hindi! Ang pangalang ginagamit sa lahat ay karaniwang pangngalan. Subukan ulit!"
+            voice "prompt evens/shadow_wrong8A.mp3"
+            s "Hindi! Ang pangalang ginagamit sa lahat ay karaniwang pangngalan. Subukan ulit!"
             jump prompt_8
 
         "Pangalan na natatangi at tumutukoy sa isang partikular na tao, hayop, o lugar":
-            voice "mila/mila_prompt8_right.mp3"
-            m "Tama! Ang pangalang pantangi ay natatangi at tumutukoy sa isang partikular na tao, hayop, o lugar!"
+            voice "prompt evens/shadow_right8B.mp3"
+            s "Tama! Ang pangalang pantangi ay natatangi at tumutukoy sa isang partikular na tao, hayop, o lugar!"
             jump story_1_ending
 
         "Salitang naglalarawan ng kilos":
-            voice "mila/mila_prompt8_wrong2.mp3"
-            m "Hindi rin! Ang salitang naglalarawan ng kilos ay hindi ito."
+            voice "prompt evens/shadow_prompt8C.mp3"
+            s "Hindi rin! Ang salitang naglalarawan ng kilos ay hindi ito."
             jump prompt_8
         
     
 label story_1_ending:
+    show happy_mila at left, with moveinleft
+    show chabs_sitting at right, with moveinright
     
     voice "mila/mila_31.mp3"
     m "Salamat sa pagsama sa aking paglalakbay! Sana ay may natutunan kayo sa ating aralin. Huwag kalimutan—ang pangngalan ay mahalaga sa ating wika at sa ating pagkatao. Hanggang sa muli!"
@@ -1012,10 +1031,11 @@ label scene2_3:
 label prompt_11:
 
     show happy_adi at center, with move
+    voice "adrielle/choices1.mp3"
+    d "Paano niyo mailalarawan ang tunog nila Fiona at Jane?"
 
     menu:
         d "Paano niyo mailalarawan ang tunog nila Fiona at Jane?"
-        voice "adrielle/choices1.mp3"
         "Tahimik":
             voice "adrielle/adrielle_wrong1.mp3"
             d "Maling sagot! Subukan mong pakinggan muli ang tunog nila Fiona at Jane. Ano ang naririnig mo?"
@@ -1095,11 +1115,17 @@ label scene2_5:
     d "Lola, Lola, tignan ninyo! May lalaking pusa rito sa labas! Tinatawag niya sina Fiona at Jane!"
 
     show happy_lolajiji at right, darken with dissolve
+    hide calm_lolajiji with dissolve
     voice "adrielle/line16.mp3"
-    d "Ang gusto kong sukat ng baso para sa aking taho ay malaki, Kuya Gong."
+    d "Ang gusto kong sukat ng baso para sa aking taho ay malaki, Kuya Gong. Mga kaibigan, puwede niyo bang piliin kung alin sa mga basong ito ay may malaking sukat?"
 
+    hide happy_lolajiji with dissolve
+    hide happy_kuyagong with dissolve
 
-    
+label prompt_12:
+
+    show happy_adi at center, with move
+
 
 
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 2033: expected 'simple_expression' not found.
-    show Calm Isra at left, darken, with with dissolve
-                                         ^
+File "game/script.rpy", line 1018: Only one say menuitem may exist per menu.
+    d "Paano niyo mailalarawan ang tunog nila Fiona at Jane?"
+                                                             ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Fri Mar 14 12:35:43 2025
+Wed Mar 26 12:29:18 2025
