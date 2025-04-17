@@ -11,6 +11,7 @@
 ## title, and shows up in the interface and error reports.
 ##
 ## The _() surrounding the string marks it as eligible for translation.
+define config.developer = True
 
 define config.name = _("kinaiyagame_3.0")
 

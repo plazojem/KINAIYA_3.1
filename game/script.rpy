@@ -102,6 +102,8 @@ image chabs_standing:
     "storyonemila/chabs_standing.png"
     zoom 0.25
 
+#Prompt Choices Story 1:
+
 
 
 #Story 2:
@@ -222,6 +224,7 @@ transform darken:
 
 transform lighten:
     linear 0.5 matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
+
 
 
 # The game starts here.
@@ -395,22 +398,23 @@ label prompt_1:
     
     menu:
         c "Ano ang pangngalan sa pangungusap na ito?\n'Si Mila ay naglalakad kasama sina Shadow at Chabs.'"
-        "Naglalakad":
+        "{image=Naglalakad.png}":
             voice "chabsprompt/w2.mp3"
             c "Hmm… ang 'naglalakad' ay hindi isang pangngalan. Ano kaya ang tamang sagot?"
             jump prompt_1
 
-        "Mila, Shadow, Chabs":
+        "{image=Mila,Shadow,Chabs.png}":
             voice "chabsprompt/r1.mp3"
             c "Tama! Ang mga pangalang 'Mila,' 'Shadow,' at 'Chabs' ay pangngalan dahil ito ay pangalan ng mga tao o hayop!"
             jump scene_4
 
-        "Kasama":
+        "{image=Kasama.png}":
             voice "chabsprompt/w1.mp3"
             c "Hindi rin! Ang 'kasama' ay isang pang-ukol. Subukan ulit!"
             jump prompt_1
         
     
+
 
 label scene_4:
 
@@ -527,17 +531,17 @@ label prompt_2:
 
     menu:
         s "Alin sa mga ito ang pangngalan?"
-        "Masayahin":
+        "{image=Masayahin.png}":
             voice "prompt evens/shadow_wrong2A.mp3"
             m "Ang 'masayahin' ay isang pang-uri dahil ito ay naglalarawan ng isang katangian."
             jump prompt_2
 
-        "Aso":
+        "{image=Aso.png}":
             voice "prompt evens/shadow_right2B.mp3"
             m "Tama! Ang 'aso' ay isang pangngalan dahil ito ay pangalan ng isang hayop!"
             jump scene_5
 
-        "Mabilis":
+        "{image=Mabilis.png}":
             voice "prompt evens/shadow_wrong2C.mp3"
             m "Tama! Ang 'aso' ay isang pangngalan dahil ito ay pangalan ng isang hayop!"
             jump prompt_2
@@ -610,25 +614,24 @@ label prompt_3:
 
     show chabs_standing at center, with dissolve
     voice "chabsprompt/q2.mp3"
-    c "Alin ang pangngalan sa pangungusap na ito?\n'Si Mila ay tumulong sa pusa.'"
+    c "Alin ang pangngalan sa pangungusap na ito?\n'Si Mila ay tumulong sa pusa?"
 
     menu:
-        c "Alin ang pangngalan sa pangungusap na ito?\n'Si Mila ay tumulong sa pusa.'"
-        "Sa":
-            voice "chabsprompt/3...mp3"
-            c "Ang 'sa' ay isang pang-ukol. Subukan mong pumili ulit!"
-            jump prompt_3
-
-        "Tumulong":
+        c "Alin ang pangngalan sa pangungusap na ito?\n'Si Mila ay tumulong sa pusa?"
+        "{image=Tumulong.png}":
             voice "chabsprompt/3..mp3"
             c "Ang 'tumulong' ay isang pandiwa. Ano kaya ang tamang sagot?"
             jump prompt_3
 
-        "Mila, pusa":
+        "{image=Mila,pusa.png}":
             voice "chabsprompt/3....mp3"
             c "Tama! Ang 'Mila' at 'pusa' ay pangngalan dahil ito ay pangalan ng isang tao at hayop!"
             jump scene_6
-        
+
+        "{image=Sa.png}":
+            voice "chabsprompt/3...mp3"
+            c "Ang 'sa' ay isang pang-ukol. Subukan mong pumili ulit!"
+            jump prompt_3
 
     
         
@@ -682,21 +685,20 @@ label prompt_4:
 
     show sitting_shadow at center, with move
     voice "prompt evens/shadow_prompt4.mp3"
-    s "Ano ang ibig sabihin ng pangngalan?"
+    s "Ano ang ibig sabihin ng pangngalan"
 
     menu:
         s "Ano ang ibig sabihin ng pangngalan?"
-        "Pangalan ng tao, hayop, lugar, bagay, o pangyayari":
+        "{image=Salitang nagsasaad ng kilos.png}":
+            voice "prompt evens/shadow_wrong4A.mp3"
+            s "Hmm, hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan ulit!"
+            jump prompt_4
+        "{image=Pangalan ng tao, hayop, lugar, bagay, o pangyayari.png}":
             voice "prompt evens/shadow_right4B.mp3"
             s "Tama! Ang pangngalan ay pangalan ng tao, hayop, lugar, bagay, o pangyayari!"
             jump prompt_5
 
-        "Salitang nagsasaad ng kilos":
-            voice "prompt evens/shadow_wrong4A.mp3"
-            s "Hmm, hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan ulit!"
-            jump prompt_4
-
-        "Salitang naglalarawan ng kilos":
+        "{image=Salitang naglalarawan ng kilos.png}":
             voice "prompt evens/shadow_wrong4C.mp3"
             s "Hindi rin! Ang salitang naglalarawan ng kilos ay hindi ito. Ano kaya ang tamang sagot?"
             jump prompt_4
@@ -711,20 +713,21 @@ label prompt_5:
 
     menu:
         c "Dahil kilala mo na sina Mila, Shadow, at Chabs, ano naman ang kahulugan ng salitang 'Mila' na ginamit natin sa kwento?"
-        "Pangalan ng hayop":
+        "{image=Pangalan ng hayop.png}":
             voice "chabsprompt/5..mp3"
             c "Hindi! Ang 'Mila' ay hindi pangalan ng hayop."
             jump prompt_5
 
-        "Pang-uri ng pag-uugali":
+        "{image=Pangalan ng tao.png}":
+            voice "chabsprompt/5....mp3"
+            c "Tama! Ang 'Mila' ay isang pangngalan na pangalan ng tao!"
+            jump prompt_6
+
+        "{image=Pang-uri ng pag-uugali.png}":
             voice "chabsprompt/5...mp3"
             c "Hindi rin! Ang 'Mila' ay hindi paglalarawan. Subukan ulit!"
             jump prompt_5
 
-        "Pangalan ng tao":
-            voice "chabsprompt/5....mp3"
-            c "Tama! Ang 'Mila' ay isang pangngalan na pangalan ng tao!"
-            jump prompt_6
         
     
 
@@ -737,17 +740,17 @@ label prompt_6:
 
     menu:
         s "Kung tinawag mo ang isang aso sa pangalang 'Shadow' o 'Chabs', ano ito?"
-        "Pangalan ng hayop":
+        "{image=Pangngalanng hayop.png}":
             voice "prompt evens/shadow_right6A.mp3"
             s "Tama! Ang 'Shadow' at 'Chabs' ay pangngalan dahil ito ay pangalan ng hayop!"
             jump prompt_7
 
-        "Salitang nagsasaad ng kilos":
+        "{image=Salitang nagsasaadng kilos.png}":
             voice "prompt evens/shadow_wrong6B.mp3"
             s "Hindi! Ang salitang nagsasaad ng kilos ay pandiwa. Subukan mong muli!"
             jump prompt_6
 
-        "Pang-uri":
+        "{image=Pang-uri.png}":
             voice "prompt evens/shadow_wrong6C.mp3"
             s "Mali! Ang pang-uri ay naglalarawan, hindi pangalan."
             jump prompt_6
@@ -763,20 +766,21 @@ label prompt_7:
 
     menu:
         c "Alin sa mga sumusunod ang halimbawa ng pangngalan? Pumili ng tamang sagot: bato, ilog, o masayahin?"
-        "bato":
+    
+        "{image=masayahin.png}":
+            voice "chabsprompt/7..mp3"
+            c "Hindi! Ang 'masayahin' ay isang pang-uri. Subukan ulit!\n(Maaaring pumili din ng maling sagot kung piliin ang hindi parehong tamang halimbawa.) "
+            jump prompt_7
+
+        "{image=bato.png}":
             voice "chabsprompt/q7...mp3"
             c "Tama! Ang bato at ilog ay mga pangngalan dahil sila ay pangalan ng bagay at lugar!"
             jump prompt_8
 
-        "ilog":
+        "{image=ilog.png}":
             voice "chabsprompt/7...mp3"
             c "Tama! Ang bato at ilog ay mga pangngalan dahil sila ay pangalan ng bagay at lugar!"
             jump prompt_8
-
-        "masayahin":
-            voice "chabsprompt/7..mp3"
-            c "Hindi! Ang 'masayahin' ay isang pang-uri. Subukan ulit!\n(Maaaring pumili din ng maling sagot kung piliin ang hindi parehong tamang halimbawa.) "
-            jump prompt_7
         
     
 
@@ -789,17 +793,17 @@ label prompt_8:
 
     menu:
         s "Sa huli, ano naman ang ibig sabihin ng pangngalang pantangi?"
-        "Pangalan na ginagamit sa lahat ng bagay":
+        "{image=Pangalan na ginagamit sa lahat ng bagay.png}":
             voice "prompt evens/shadow_wrong8A.mp3"
             s "Hindi! Ang pangalang ginagamit sa lahat ay karaniwang pangngalan. Subukan ulit!"
             jump prompt_8
 
-        "Pangalan na natatangi at tumutukoy sa isang partikular na tao, hayop, o lugar":
+        "{image=Pangalan na natatangi at tumutukoy sa isang partikular na tao, hayop, o lugar.png}":
             voice "prompt evens/shadow_right8B.mp3"
             s "Tama! Ang pangalang pantangi ay natatangi at tumutukoy sa isang partikular na tao, hayop, o lugar!"
             jump story_1_ending
 
-        "Salitang naglalarawan ng kilos":
+        "{image=Salitangnaglalarawan ng kilos.png}":
             voice "prompt evens/shadow_prompt8C.mp3"
             s "Hindi rin! Ang salitang naglalarawan ng kilos ay hindi ito."
             jump prompt_8
@@ -912,15 +916,15 @@ label prompt_9:
     menu:
         
         j "Alin sa sumusunod ang tamang paglalarawan ng kulay ng balahibo ni Fiona?"
-        "Kulay asul at puti":
+        "{image=Kulay asul at puti.png}":
             j "Maling sagot! Subukan muli! Ano nga ba ang kulay ng balahibo ni Fiona?"
             jump prompt_9
 
-        "Kulay puti at kahel":
+        "{image=Kulay puti at kahel.png}":
             j "Tama! Si Fiona ay may balahibong kulay kahel at puti!"
             jump scene2_2
 
-        "Kulay itim at dilaw":
+        "{image=Kulay itim at dilaw.png}":
 
             j "Maling sagot! Subukan muli! Ano nga ba ang kulay ng balahibo ni Fiona?"
             jump prompt_9
@@ -950,15 +954,15 @@ label prompt_10:
 
     menu:
         j " Alin sa mga sumusunod ang tamang naglalarawan sa kulay ng balahibo ni Jane?"
-        "Kulay itim":
+        "{image=Kulay itim.png}":
             j "Tama! Si Jane ay may balahibong kulay itim."
             jump scene2_3
 
-        "Kulay puti":
+        "{image=Kulay puti.png}":
             j "Mhm. Subukan mong pagmasdan muli si Jane. Ano ang kanyang tunay na kulay?"
             jump prompt_10
 
-        "Kulay kahel":
+        "{image=Kulay kahel.png}":
             j "Mhm. Subukan mong pagmasdan muli si Jane. Ano ang kanyang tunay na kulay?"
             jump prompt_10
         
@@ -1036,17 +1040,17 @@ label prompt_11:
 
     menu:
         d "Paano niyo mailalarawan ang tunog nila Fiona at Jane?"
-        "Tahimik":
+        "{image=Tahimik.png}":
             voice "adrielle/adrielle_wrong1.mp3"
             d "Maling sagot! Subukan mong pakinggan muli ang tunog nila Fiona at Jane. Ano ang naririnig mo?"
             jump prompt_11
 
-        "Malakas":
+        "{image=Malakas.png}":
             voice "adrielle/right1.mp3"
             d "Tama! Ang kanilang tinig ay malakas!"
             jump scene2_4
 
-        "Malalim":
+        "{image=Malalim.png}":
             voice "adrielle/choices1.mp3"
             d "Maling sagot! Subukan mong pakinggan muli ang tunog nila Fiona at Jane. Ano ang naririnig mo?"
             jump prompt_11
@@ -1126,8 +1130,22 @@ label prompt_12:
 
     show happy_adi at center, with move
 
+    menu:
+        d "Mga kaibigan, puwede niyo bang piliin kung alin sa mga basong ito ay may malaking sukat?"
+        "{image=Baso 1.png}":
+            d "Tama! Ang basong ito ay mayroong malaking sukat dahil ito ay puwedeng lagyan ng maraming taho."
+            jump scene2_6
+
+        "{image=Baso 2.png}":
+            d "Subukan muli! Ano ang tawag sa baso na may pinakamaraming laman?"
+            jump prompt_12
+
+        "{image=Baso 3.png}":
+            d "Subukan muli! Ano ang tawag sa baso na may pinakamaraming laman?"
+            jump prompt_12
 
 
+label scene2_6:
 
     show happy_adi at left, darken with dissolve
     show happy_kuyagong at center, lighten with dissolve
@@ -1143,11 +1161,35 @@ label prompt_12:
     show happy_kuyagong at center, lighten with dissolve
     voice "kuya/gong5.mp3"
     k "Haha! Salamat, Adi! Ang taho ko ay laging matamis at malinamnam! Kaya gustong-gusto ito ng maraming batang katulad mo."
-
     show happy_kuyagong at center, darken with dissolve
     show happy_adi at left, lighten with dissolve
     voice "adrielle/line18.mp3"
     d "Kinikilig na ako dahil sa tamis nito, sadyang nakakapagbigay po ito ng enerhiya!"
+
+    d "Mga kaibigan, ano sa mga sumusunod ang tamang salita na makakapagbigay-larawan sa lasa nito? "
+
+    jump prompt_13
+
+label prompt_13:
+
+    show happy_adi at center, with move
+
+    menu:
+        d "Mga kaibigan, puwede niyo bang piliin kung alin sa mga basong ito ay may malaking sukat?"
+        "Maalat":
+            d "Maling sagot! Subukan mong namnamin muli ang taho. Ito ay nakakakilig dahil sa kanyang tamis! Ano ang lasa nito?"
+            jump prompt_13
+
+        "Matamis":
+            d "Tama! Ang taho ni Kuya Gong ay matamis!"
+            jump scene2_7
+
+        "Maasim":
+            d "Maling sagot! Subukan mong namnamin muli ang taho. Ito ay nakakakilig dahil sa kanyang tamis! Ano ang lasa nito?"
+            jump prompt_13
+
+
+label scene2_7:
 
     voice "cat/cat_meow2.mp3"
     f "Meow! Meow!"
@@ -1202,9 +1244,9 @@ label prompt_12:
 
     hide happy_adi with dissolve
     
-    jump prompt_12
+    jump prompt_14
 
-label prompt_12:
+label prompt_14:
 
     show calm_lolajiji at center, with move
 
@@ -1212,10 +1254,10 @@ label prompt_12:
         j "Mga kaibigan, ano ba ang ginagawa ng asawa ni Fiona upang maging mapagmahal?"
         "Nagdadala ng pagkain at nag-aalaga":
             j "Tama! Ang mapagmahal ay nangangahulugang maalaga at mabait, tulad ng pagbibigay ng pagkain at pagiging malambing kay Fiona!"
-            jump scene2_6
+            jump scene2_8
 
         "Malakas":
-            j ""
+            j "Maling sagot! Subukan mong pakinggan muli ang tunog nila Fiona at Jane. Ano ang naririnig mo?"
             jump prompt_12
 
         "Nang-aagaw ng pagkain":
@@ -1225,7 +1267,7 @@ label prompt_12:
     
 
 
-label scene2_6:
+label scene2_8:
     hide calm_lolajiji with dissolve
 
     show happy_adi at left, with dissolve
@@ -1277,10 +1319,10 @@ label scene2_6:
 
     hide happy_adi with dissolve
 
-    jump prompt_13
+    jump prompt_15
 
 
-label prompt_13:
+label prompt_15:
 
     show happy_lolajiji at center, with move
     
@@ -1288,19 +1330,19 @@ label prompt_13:
         j "Ano sa tingin niyo ang nagpapakita na siya ay matapang?"
         "Kung umalis papalayo ang isang hayop mula sa kanyang kalaban, hindi siya matapang! Subukan mong muli.":
             j "Tama! Ang mapagmahal ay nangangahulugang maalaga at mabait, tulad ng pagbibigay ng pagkain at pagiging malambing kay Fiona!"
-            jump prompt_13
+            jump prompt_15
 
         "Tumayo sa harapan ni Fiona at hinarap ang kalaban":
             j "Tama! Ang matapang ay nangangahulugang hindi natatakot, tulad ni Jane na ipinagtanggol si Fiona!"
-            jump scene2_7
+            jump scene2_9
 
         "Umakyat sa bubong at iniwan ang mag-asawa":
             j "Kung umalis papalayo ang isang hayop mula sa kanyang kalaban, hindi siya matapang! Subukan mong muli.?"
-            jump prompt_13
+            jump prompt_15
         
     
 
-label scene2_7:
+label scene2_9:
     hide happy_lolajiji with dissolve   
     
     show happy_adi at left, lighten with dissolve
@@ -1329,10 +1371,9 @@ label scene2_7:
     voice "lola/lola 21.mp3"
     j "Oh, saan ka naman kayo pupunta, Fiona at Jane?"
 
-    jump scene2_8
+    jump scene2_10
 
-
-label scene2_8: 
+label scene2_10: 
 
     scene bg backyard
     with dissolve
@@ -1388,6 +1429,29 @@ label scene2_8:
     voice "lola/lola 25.mp3"
     j "Haha! Mukhang may isang pasaway sa grupo! Ano pa ang napapansin mo, Adi?"
 
+    jump prompt_16
+
+label prompt_16:
+
+    show happy_adi at center, with move
+
+    menu:
+        d "Mga kaibigan, paano niyo ilalarawan ang ugali ng kuting na may balahibong itim at puti?"
+        "Tahimik":
+            d "Hmm, tignan mo siya muli! Sobra sa enerhiya at laging tumatakbo! Ano kaya ang tamang sagot?"
+            jump prompt_16
+
+        "Makulit":
+            d "Magaling! Ang kuting na may balahibong itim at puti ay makulit at malikot dahil mahilig siyang tumakbo, Adi."
+            jump scene2_11
+
+        "Matatakutin":
+            d "Hmm, tignan mo siya muli! Sobra sa enerhiya at laging tumatakbo! Ano kaya ang tamang sagot?"
+            jump prompt_16
+
+
+label scene2_11:
+
     show happy_lolajiji at right, darken with dissolve
     show curious_adi at left, lighten with dissolve
     hide happy_adi with dissolve
@@ -1423,7 +1487,29 @@ label scene2_8:
     show happy_lolajiji at right, darken with dissolve
     show happy_adi at left, lighten with dissolve
     voice "adrielle/line37.mp3"
-    d "Hmm, ang kanyang balahibo ay katulad ng kanyang nanay."
+    d "Hmm, ang kanyang balahibo ay katulad ng kanyang nanay. Mga kaibigan, ano ang napapansin ninyo sa itsura ng mapagmahal na kuting na ito?"
+
+    jump prompt_17
+
+label prompt_17:
+
+
+    menu:
+        d "Ano ang napapansin ninyo sa itsura ng mapagmahal na kuting na ito?"
+        "Kulay itim at puti":
+            d "Hmm, parang hindi siya kamukha ni Fiona! Si Fiona ay mayroong kahel at puting kulay. Ano kaya ang tamang sagot?"
+            jump prompt_17
+
+        "Kulay kahel at puti":
+            d ""
+            jump scene2_12
+
+        "Kulay itim":
+            d "Hmm, parang hindi siya kamukha ni Fiona! Si Fiona ay mayroong kahel at puting kulay. Ano kaya ang tamang sagot?"
+            jump prompt_17
+
+
+label scene2_12:
 
     voice "adrielle/line38.mp3"
     d "Mukhang bagay po sa kanya ang pangalan na FJ! na nangangahulugang Fiona Jr., dahil katulad niya ang kanyang nanay!"
@@ -1436,7 +1522,32 @@ label scene2_8:
     show happy_lolajiji at right, darken with dissolve
     show happy_adi at left, lighten with dissolve
     voice "adrielle/line39.mp3"
-    d "Hindi niya po kamukha kahit sino kina Fiona at Jane, Lola. Ang kanyang itsura ay puti at mayroong po siyang malaking tuldok sa kanyang ulo."
+    d "Hindi niya po kamukha kahit sino kina Fiona at Jane, Lola. Ang kanyang itsura ay puti at mayroong po siyang malaking tuldok sa kanyang ulo. Mga kaibigan, ano ang makakatulong upang mas madali nating makilala ang kuting na ito? "
+
+    jump prompt_18
+
+
+label prompt_18:
+
+    show happy_adi at center, with move
+
+    menu:
+        d "Ano ang makakatulong upang mas madali nating makilala ang kuting na ito? "
+        "May malaking itim na tuldok sa ulo":
+            d "ama! Ang pangatlong kuting ay may malaking itim na tuldok sa ulo, kaya siya ay naiiba sa kanyang mga kapatid."
+            jump scene2_13
+
+        "May mahabang buntot":
+            d "Hmm, parang hindi naman kakaiba ang kanyang buntot o binti. Ano kaya ang tamang sagot?"
+            jump prompt_18
+
+        "May maikling binti":
+            d "Hmm, parang hindi naman kakaiba ang kanyang buntot o binti. Ano kaya ang tamang sagot?"
+            jump prompt_18
+
+
+
+label scene2_13:
 
     show happy_adi at left, darken with dissolve
     show happy_lolajiji at right, lighten with dissolve
@@ -1458,7 +1569,31 @@ label scene2_8:
     show happy_adi at left, lighten with dissolve
     hide curious_adi with dissolve
     voice "adrielle/line41.mp3"
-    d "Hindi po siya katulad ng dalawa na sobrang likot, Lola. Tahimik lamang po siya sa isang tabi."
+    d "Hindi po siya katulad ng dalawa na sobrang likot, Lola. Tahimik lamang po siya sa isang tabi. Mga kaibigan, paano natin mailalarawan ang ugali ng pangatlong pusa?"
+
+    jump prompt_19
+
+
+label prompt_19:
+
+    show happy_adi at center, with move
+
+    menu:
+        d ""
+        "Malambing":
+            d "Hmm, parang hindi naman siya tumatakbo o nanglalambing. Tignan mo, siya ay tahimik lamang. Ano kaya ang tamang sagot?"
+            jump prompt_19
+
+        "Malikot":
+            d "Hmm, parang hindi naman siya tumatakbo o nanglalambing. Tignan mo, siya ay tahimik lamang. Ano kaya ang tamang sagot?"
+            jump prompt_19
+
+        "Mahiyain":
+            d "Tama! Si Dot ay mahiyain at tahimik, mas gusto niyang magmasid muna kaysa makipaglaro agad sa kanyang mga kapatid!"
+            jump scene2_14
+
+
+label scene2_14:
 
     voice "adrielle/line42.mp3"
     d "Nakakalungkot naman, Lola…Baka hindi pa sanay sa atin at sa kanyang mga kapatid."
@@ -1506,10 +1641,10 @@ label scene2_8:
     voice "adrielle/line46.mp3"
     d "Salamat sa pagsama sa amin, mga kaibigan! Hanggang sa susunod nating kwento, mga kaibigan! Salamat at ingat kayo palagi!"
 
-    jump scene2_9
+    jump scene2_15
 
 
-label scene2_9:
+label scene2_15:
 
     scene bg backyard
     with dissolve
@@ -1526,13 +1661,15 @@ label scene2_9:
     hide happy_adi with dissolve
     show happy_lolajiji at center, with move
 
-label prompt_14:
+    jump prompt_20
+
+label prompt_20:
     
     menu:
         j "ano nga ba ulit ang ibig sabihin ng pang-uri?"
         "Salitang nagsasaad ng kilos":
             j "Hmm, hindi! Ang salitang nagsasaad ng kilos ay tinatawag na pandiwa. Subukan ulit!"
-            jump prompt_14
+            jump prompt_20
 
         "Salitang naglalarawan ng katangian ng tao, hayop, bagay, o lugar":
             j "Tama! Ang pang-uri ay salitang naglalarawan ng katangian ng tao, hayop, bagay, o lugar, tulad ng 'makulit,' 'mahiyain,' at 'malambing!'"
@@ -1540,17 +1677,44 @@ label prompt_14:
 
         "Pangalan ng tao, bagay, hayop, o lugar":
             j "Hindi rin! Ang pangalan ng tao, bagay, hayop, o lugar ay tinatawag na pangngalan. Ano kaya ang tamang sagot?"
-            jump prompt_14
+            jump prompt_20
         
     
 
-label scene2_10:
+label scene2_16:
     hide happy_lolajiji with dissolve   
 
     show happy_lolajiji at right, lighten with dissolve
     voice "lola/lola 37.mp3"
     j "Magaling! Natutunan natin kung paano naglalarawan ang pang-uri sa ating mga alagang pusa at sa mga bagay sa paligid natin. Ngayon, subukan nating isa pang halimbawa!"
 
+    voice "adrielle/line48.mp3"
+    d "Muli, ano ang tunog ang narinig natin mula kina Fiona at Jane kaninang umaga noong dumating si Kuya Gong, ang nagbebenta ng taho?"
+
+    jump prompt_21
+
+
+label prompt_21:
+
+    show happy_adi at center, with move
+
+    menu:
+        d "Ano ang tunog ang narinig natin mula kina Fiona at Jane kaninang umaga noong dumating si Kuya Gong, ang nagbebenta ng taho?"
+        "Tahimik":
+            d "Mukhang hindi naman tahimik ang dalawang pusa dahil halos marinig na ng buong bahay ang malakas nilang tinig! Subukan muli!"
+            jump prompt_21
+
+        "Malalim":
+            d "Mukhang hindi naman malalim ang dalawang pusa dahil halos marinig na ng buong bahay ang malakas nilang tinig! Subukan muli!"
+            jump prompt_21
+
+        "Malakas":
+            d "Tama! Ang tinig nila Fiona at Jane ay malakas tuwing umaga dahil sa pagdating ni Kuya Gong!"
+            jump scene2_17
+
+label scene2_17:
+
+    hide happy_adi with dissolve
     voice "lola/lola 38.mp3"
     j "Subukan nating alalahanin ang laki ng baso ng taho na binili ni Adi kanina mula kay Kuya Gong."
     
@@ -1562,26 +1726,26 @@ label scene2_10:
     hide happy_lolajiji with dissolve
     show happy_adi at center, with move
 
-    jump prompt_15
+    jump prompt_22
 
-label prompt_15:
+label prompt_22:
     menu:
         d "paano naman natin mailalarawan ang binili nating baso ng taho mula kay Kuya Gong na may pinakamaraming laman?"
         "maliit":
             d "Subukan muli! Ano ang tawag sa pinakamalaking sukat ng baso?"
-            jump prompt_15
+            jump prompt_22
 
         "katamtaman":
             d "Subukan muli! Ano ang tawag sa pinakamalaking sukat ng baso?"
-            jump scene2_11
+            jump scene2_18
 
         "malaki":
             d "Tama! Ang malaking baso ang may pinakamaraming na taho!"
-            jump prompt_15
+            jump prompt_22
         
     
 
-label scene2_11:
+label scene2_18:
     hide happy_adi with dissolve
 
     show happy_lolajiji at right, lighten with dissolve
@@ -1606,27 +1770,27 @@ label scene2_11:
     hide happy_lolajiji with dissolve
     show happy_adi at center, with move
 
-    jump prompt_16
+    jump prompt_23
 
-label prompt_16:
+label prompt_23:
 
     menu:
         d "ano kaya ang tamang paglalarawan sa asawa ni Fiona?"
         "Malupit":
             d "Hmm, parang hindi naman siya malupit o masungit kay Fiona! Subukan mong pag-isipan ulit!"
-            jump prompt_16
+            jump prompt_23
 
         "mapagmahal":
             d "Tama! Ang asawa ni Fiona ay mapagmahal dahil nagdadala siya ng pagkain at nagpapakita ng malasakit kay Fiona!"
-            jump scene2_12
+            jump scene2_19
 
         "Masungit":
             d "Hmm, parang hindi naman siya malupit o masungit kay Fiona! Subukan mong pag-isipan ulit!"
-            jump prompt_16
+            jump prompt_23
         
     
 
-label scene2_12:
+label scene2_19:
     hide happy_adi with dissolve
 
     show happy_lolajiji at right, lighten with dissolve
@@ -1640,27 +1804,60 @@ label scene2_12:
 
     hide happy_lolajiji with dissolve
     show happy_adi at center, with move
-    jump prompt_17
 
-label prompt_17:
+    jump prompt_24
+
+label prompt_24:
 
     menu:
         d "Ano kaya ang tamang paglalarawan kay Dot?"
         "mahiyain":
             d "Tama! Si Dot ay mahiyain at mas gusto niyang magmasid muna bago makisalamuha!"
-            jump prompt_17
+            jump prompt_24
 
         "malikot":
             d "Hmm, parang hindi siya mahilig tumakbo o mangulit. Ano kaya ang tamang sagot?"
-            jump scene2_13
+            jump scene2_20
 
         "malambing":
             d "Hmm, parang hindi siya mahilig tumakbo o mangulit. Ano kaya ang tamang sagot?"
-            jump prompt_17
+            jump prompt_24
         
     
 
-label scene2_13:
+label scene2_20:
+    hide happy_adi with dissolve
+
+
+    show happy_lolajiji at right, lighten with dissolve
+    j "Dahil sa pagmamahalan ni Fiona at ang kanyang asawa, nagbunga ito sa tatlo nilang anak na kuting. Nagdagdagan ang ating pamilya ng tatlong napaka-cute na kuting! "
+    
+    show happy_lolajiji at right, darken with dissolve
+    show happy_adi at left, lighten with dissolve
+    d "Opo, Lola! Sina Jane Jr. Fiona Jr., at si Dot! Ngunit napansin ko, Lola, si Dot ay hindi kasing likot ng kanyang mga kapatid at tahimik lamang sa isang tabi. Ano kaya ang tamang paglalarawan kay Dot?"
+
+    jump prompt_25
+
+
+label prompt_25:
+
+    show happy_adi at center, with move
+
+    menu:
+        d "Ano kaya ang tamang paglalarawan kay Dot?"
+        "Mahiyain":
+            d "Tama! Si Dot ay mahiyain at mas gusto niyang magmasid muna bago makisalamuha!"
+            jump scene2_21
+
+        "Malikot":
+            d "Hmm, parang hindi siya mahilig tumakbo o mangulit. Ano kaya ang tamang sagot?"
+            jump prompt_25
+
+        "Malambing":
+            d "Hmm, parang hindi siya mahilig tumakbo o mangulit. Ano kaya ang tamang sagot?"
+            jump prompt_25
+
+label scene2_21:
     hide happy_adi with dissolve
 
     show happy_adi at left, lighten with dissolve
@@ -1690,7 +1887,6 @@ label scene2_13:
     show happy_adi at left, lighten with dissolve
     voice "adrielle/line55.mp3"
     d "Mukhang dito na nagtatapos ang ating kwento, mga kaibigan. Muli, marami salamat sa pagsama sa amin ni Lola Jiji. Hanggang sa susunod nating kwento! Ingat!"
-
 
     jump story_3_splashscreen
 
@@ -1741,14 +1937,14 @@ label story_3:
 
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
-    jump prompt_18
+    jump prompt_26
 
-label prompt_18:
+label prompt_26:
     menu:
         i "Ano kaya sa tingin mo ang ginagawa ni Lala ngayon?"
         "Kumakanta":
             i "Kumakanta"
-            jump prompt_18
+            jump prompt_26
 
         "Kumakawag ang buntot":
             i "Tama! 'Kumakawag ang buntot' ang tamang sagot! Ang 'kumakawag' ay isang pandiwa o kilos na ginagawa ni Lala kapag siya ay masaya."
@@ -1756,7 +1952,7 @@ label prompt_18:
 
         "Sumisipa ng bola":
             i " Subukan mo ulit! Ano ang ginagawa niya kapag masaya?"
-            jump prompt_18
+            jump prompt_26
 
 
 label scene3_2:
@@ -1841,18 +2037,18 @@ label scene3_3:
     hide Lala Standing with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_19
+    jump prompt_27
 
-label prompt_19:
+label prompt_27:
     menu:
         i "Alin sa mga ito ang tamang kilos na ihahagis ko ang bola? "
         "Hawakan ito sa kamay":
             i "Kailangan natin itong ihagis para mahahanap ito ni Lala! Subukan mo ulit!"
-            jump prompt_19
+            jump prompt_27
 
         "Ipagulong ito sa sahig":
             i "Hmm, hindi natin ipagugulong ang bola. Kailangan natin itong ihagis para mahahanap ito ni Lala! Subukan mo ulit!"
-            jump prompt_19
+            jump prompt_27
 
         "Ihagis ito papalayo":
             i " Tama! 'Ihahagis' ang tamang sagot! Ang 'ihahagis' ay isang pandiwa dahil ito ay isang kilos na aking gagawin."
@@ -1883,9 +2079,8 @@ label scene3_4:
     hide Lala Standing with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_20
-
-label prompt_20:
+    jump prompt_28
+label prompt_28:
     menu:
         i "Muli, ano ang gagagawin natin sa bola upang hanapin ito ni Lala?"
         "Ihahagis":
@@ -1894,11 +2089,11 @@ label prompt_20:
 
         "Ibubulsa":
             i "Hmm, hindi natin ipagugulong ang bola. Kailangan natin itong ihagis para mahahanap ito ni Lala! Subukan mo ulit!"
-            jump prompt_20
+            jump prompt_28
 
         "Ipapagulong":
             i "Hmm, hindi mo makikita at mahahabol ni Lala ang bola kung ganito ang gagawin mo. Kailangan natin itong ihagis para maghanap ka!"
-            jump prompt_20
+            jump prompt_28
         
 
 
@@ -1917,9 +2112,9 @@ label scene3_5:
     hide Lala Standing with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_21
+    jump prompt_29
 
-label prompt_21:
+label prompt_29:
     menu:
         i "Alam mo ba kung ano ang ating gagawin upang tayo ay makapagbilang?"
         "Gamitin ang kamay":
@@ -1928,11 +2123,11 @@ label prompt_21:
 
         "Tumalon ng sampung beses":
             i "Haha! Masaya ang tumalon, pero hindi ito ang tamang paraan ng pagbibilang! Subukan natin muli."
-            jump prompt_21
+            jump prompt_29
 
         "Itikom ang bibig":
             i "Kapag itinikom natin ang ating bibig, hindi tayo makakapagbilang! Ano kaya ang tamang sagot?"
-            jump prompt_21
+            jump prompt_29
         
 
 
@@ -1950,14 +2145,14 @@ label scene3_6:
 
     show Happy Isra at center, with move
 
-    jump prompt_22
+    jump prompt_30
 
-label prompt_22:
+label prompt_30:
     menu:
         i "Ano ang ibig sabihin ng salitang 'nagtatago'?"
         "Nagpapakita sa harapan":
             i "Hmm, subukan mong isipin ulit! Kung nagtatago si Lala, makikita ko ba siya agad?"
-            jump prompt_22
+            jump prompt_30
 
         "Hindi nagpapakita o nagkukubli":
             i "Magaling! Ang 'nagtatago' ay nangangahulugang hindi nagpapakita o nagkukubli. Isa itong pandiwa, dahil ito ay isang kilos na maaaring gawin ng isang tao o hayop!"
@@ -1965,7 +2160,7 @@ label prompt_22:
 
         "Tumatalon nang mataas":
             i "Hmm, subukan mong isipin ulit! Kung nagtatago si Lala, makikita ko ba siya agad?"
-            jump prompt_22
+            jump prompt_30
         
 
 label scene3_7:
@@ -1975,10 +2170,10 @@ label scene3_7:
     voice "isra/isra_21.mp3"
     i "Hay nako, Lala! Hindi pa nga tayo tapos ngunit iba na ang inilalaro mo! (masiglang tumawa) Tara, mga kaibigan! Hanapin natin si Lala."
 
-    jump scene3_7
+    jump scene3_8
 
 
-label scene3_7:
+label scene3_8:
 
     scene bg backyard
     with dissolve
@@ -2035,27 +2230,27 @@ label scene3_7:
     hide Angry Batang Lalaki 2 with dissolve
     show Curious Isra at center, with move
 
-    jump prompt_23
+    jump prompt_31
 
-label prompt_23:
+label prompt_31:
 
     menu:
         i "ano ba ang kahulugan ng salitang 'saktan'?"
         "Alagaan at mahalin":
             i "Hmm, mukhang nagkamali ka. Ang 'saktan' ay isang kilos na hindi maganda. Subukan mong pumili ulit!"
-            jump scene3_8
+            jump scene3_9
 
         "Bigyan ng laruan":
             i "Hmm, mukhang nagkamali ka. Ang 'saktan' ay isang kilos na hindi maganda. Subukan mong pumili ulit!"
-            jump prompt_23
+            jump prompt_31
 
         "Pasakitan o gawan ng masama":
             i "Tama! Ang 'saktan' ay nangangahulugang pasakitan o gawan ng masama. Isa itong pandiwa, dahil ito ay isang kilos na maaaring gawin ng isang tao."
-            jump prompt_23
+            jump prompt_31
         
 
 
-label scene3_8:
+label scene3_9:
     
     hide Curious Isra with dissolve
 
@@ -2100,10 +2295,10 @@ label scene3_8:
     voice "lala/arf.mp3"
     l "Arf, arf!"
 
-    jump scene3_9
+    jump scene3_10
 
 
-label scene3_9:
+label scene3_10:
 
     scene bg backyard
     with dissolve
@@ -2134,26 +2329,26 @@ label scene3_9:
     hide Scared Batang Lalaki 2 with dissolve
     show Curious Isra at center with move
 
-    jump prompt_24
+    jump prompt_32
 
-label prompt_24:
+label prompt_32:
     menu:
         i "Ano ang dapat gawin ni Lala upang mataboy ang ahas?"
         "Tahulan":
             i "Tama, Lala! Dapat mong tahulan ang ahas upang matakot ito at lumayo!"
-            jump scene3_10
+            jump scene3_11
 
         "Yakapin":
             i "Hmm, hindi yata magandang yakapin ang ahas! Delikado ito, Lala! Ano kaya ang tamang gawin?"
-            jump prompt_24
+            jump prompt_32
 
         "Tumakbo":
             i "Kung tatakbo tayo, paano natin matutulungan ang mga bata? Subukan natin ulit!"
-            jump prompt_24
+            jump prompt_32
         
 
 
-label scene3_10:
+label scene3_11:
     hide Curious Isra with dissolve
 
     scene bg backyard
@@ -2252,25 +2447,25 @@ label story_3_ending:
 
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
-    jump prompt_25
+    jump prompt_33
 
-label prompt_25:
+label prompt_33:
 
     menu:
         i "Ano nga ba muli ang pandiwa?"
         "Salitang nagsasaad ng kilos":
             i "Tama! Ang pandiwa ay salitang nagsasaad ng kilos o galaw, tulad ng ihagis, tumakbo, at tahulan! Ang galing mo!"
-            jump scene3_11
+            jump scene3_12
 
         "Pangalan ng tao, lugar, o bagay":
             i "Hmm, hindi! Ang pangalan ng tao, lugar, o bagay ay tinatawag na pangngalan. Subukan ulit!"
-            jump prompt_25
+            jump prompt_33
 
         "Salitang naglalarawan ng kulay o hugis":
             i "Hindi rin! Ang mga salitang naglalarawan ng kulay o hugis ay tinatawag na pang-uri. Ano kaya ang tamang sagot?"
-            jump prompt_25
+            jump prompt_33
 
-label scene3_11:
+label scene3_12:
 
     hide Happy Isra with dissolve
 
@@ -2283,26 +2478,26 @@ label scene3_11:
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_26
+    jump prompt_34
 
-label prompt_26:
+label prompt_34:
 
     menu:
         i "ano ang kahulugan ng salitang kumakawag, ang salita na ginamit natin sa kilos ng kanyang buntot?"
         "Nananahimik sa isang sulok":
             i "Hindi! Ang isang bagay o hayop na nananahimik ay hindi gumagalaw. Subukan mong muli!"
-            jump prompt_26
+            jump prompt_34
 
         "Sumisipa ng bola":
             i "Hindi! Ang taong o hayop na natutulog ay hindi kumikilos. Subukan mong muli!"
-            jump prompt_26
+            jump prompt_34
 
         "Gumagalaw nang masigla":
             i  "Tama! Ang kumakawag ay kilos ng pagbibigay ng kasiyahan o sigla, tulad ng pagkilos ng buntot ng isang aso!"
-            jump scene3_12
+            jump scene3_13
         
 
-label scene3_12:
+label scene3_13:
 
     hide Happy Isra with dissolve  
 
@@ -2315,27 +2510,27 @@ label scene3_12:
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_27
+    jump prompt_35
 
 
-label prompt_27:
+label prompt_35:
     menu:
         i "Ano ang ibig sabihin ng 'ihagis'?"
         "Hawakan ito sa kamay":
             i "Hindi! Ang paghawak ay hindi nangangahulugang paghagis. Ano kaya ang tamang sagot?"
-            jump prompt_27
+            jump prompt_35
 
         "Itapon ang isang bagay papalayo gamit ang kamay":
             i "Tama! Ang ihagis ay kilos ng pagtatapon o pagpapalipad ng isang bagay papalayo!"
-            jump scene3_13
+            jump scene3_14
 
         "Itikom ang bibig":
             i "Hindi! Wala itong kinalaman sa bola. Subukan mong muli!"
-            jump prompt_27
+            jump prompt_35
         
 
 
-label scene3_13:
+label scene3_14:
 
     hide Happy Isra with dissolve  
 
@@ -2348,27 +2543,27 @@ label scene3_13:
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_28
+    jump prompt_36
 
 
-label prompt_28:
+label prompt_36:
     menu:
         i "Ano ang ibig sabihin ng salitang 'nagtatago'?"
         "Nagpapakita sa harapan":
             i "Hmm, subukan mong isipin ulit! Kung nagtatago si Lala, makikita ko ba siya agad?"
-            jump prompt_28
+            jump prompt_36
 
         "Hindi nagpapakita o nagkukubli":
             i "Magaling! Ang 'nagtatago' ay nangangahulugang hindi nagpapakita o nagkukubli. Isa itong pandiwa, dahil ito ay isang kilos na maaaring gawin ng isang tao o hayop!"
-            jump scene3_14
+            jump scene3_15
 
         "Tumatalon nang mataas":
             i "Hmm, subukan mong isipin ulit! Kung nagtatago si Lala, makikita ko ba siya agad?"
-            jump prompt_28
+            jump prompt_36
         
     
 
-label scene3_14:
+label scene3_15:
 
     hide Happy Isra with dissolve  
 
@@ -2381,27 +2576,27 @@ label scene3_14:
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_29
+    jump prompt_37
 
-label prompt_29:
+label prompt_37:
 
     menu:
         i "Ano ang ibig sabihin ng 'saktan'?"
         "Alagaan at mahalin":
             i "Hindi! Ang pag-aalaga at pagmamahal ay kabaligtaran ng pananakit. Subukan mong muli!"
-            jump prompt_29
+            jump prompt_37
 
         "Purihin at pasayahin":
             i "Hindi! Ang purihin at pasayahin ay kilos ng pagpapasaya, hindi pananakit!"
-            jump prompt_29
+            jump prompt_37
 
         "Pasakitan o gawan ng masama":
             i "Tama! Ang saktan ay nangangahulugang pasakitan o gawan ng masama. Ito ay kilos na hindi dapat gawin!"
-            jump scene3_15
+            jump scene3_16
         
     
 
-label scene3_15:
+label scene3_16:
 
     hide Happy Isra with dissolve  
 
@@ -2414,25 +2609,25 @@ label scene3_15:
     hide Lala Sitting with dissolve
     show Happy Isra at center, with move
 
-    jump prompt_30
+    jump prompt_38
 
 
-label prompt_30:
+label prompt_38:
     menu:
         i "Ano ang kahulugan ng 'tahulan'?"
         "Yakapin ng mahigpit":
             i "Hindi! Ang yakap ay nagpapakita ng pagmamahal, pero ang tahulan ay isang kilos na ginagamit sa babala!"
-            jump prompt_30
+            jump prompt_38
 
         "Tumahol upang ipagtanggol o takutin ang iba":
             i "Tama! Ang tahulan ay kilos ng pagtahol upang magbigay babala o ipagtanggol ang sarili!"
-            jump scene3_16
+            jump scene3_17
 
         "Paglaruan":
             i "Hindi! Ang paglalaro ay ibang kilos, subukan mong muli!"
-            jump prompt_30
+            jump prompt_38
 
-label scene3_16:
+label scene3_17:
 
     hide Happy Isra with dissolve
 

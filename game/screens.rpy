@@ -212,7 +212,7 @@ screen choice(items):
             textbutton i.caption action i.action
 
 
-style choice_vbox is vbox
+style choice_vbox is hbox
 style choice_button is button
 style choice_button_text is button_text
 
@@ -221,7 +221,7 @@ style choice_vbox:
     ypos 405
     yanchor 0.5
 
-    spacing gui.choice_spacing
+    spacing 100
 
 style choice_button is default:
     properties gui.button_properties("choice_button")

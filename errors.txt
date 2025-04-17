@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1018: Only one say menuitem may exist per menu.
-    d "Paano niyo mailalarawan ang tunog nila Fiona at Jane?"
-                                                             ^
+File "game/script.rpy", line 697: Only one say menuitem may exist per menu.
+    s "Ano ang ibig sabihin ng pangngalan?"
+                                           ^
 
 Ren'Py Version: Ren'Py 8.3.6.25022803
-Wed Mar 26 12:29:18 2025
+Mon Apr 14 11:47:01 2025
